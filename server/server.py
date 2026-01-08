@@ -5,7 +5,7 @@ import json
 
 from pathlib import Path
 
-xmlfile = Path('./src/user_data.xml')
+xmlfile = Path('./user_data.xml')
 tree = ET.parse(str(xmlfile))
 root = tree.getroot()
 

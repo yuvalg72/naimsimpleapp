@@ -1,17 +1,16 @@
-FROM alpine:3.5
+FROM alpine:3.22.2
 
 # Update
-RUN apk add --update python py-pip
-RUN pip install --upgrade pip
+RUN apk add --update python3 py3-pip
 
 # Install app dependencies
-RUN pip install -U web.py
-RUN pip install -U pathlib
+RUN pip3 install --break-system-packages -U web.py
 
 # Bundle app source
 COPY server.py /src/server.py
 COPY user_data.xml /src/user_data.xml
 
+WORKDIR /src
 
 EXPOSE  8080
-CMD ["python", "/src/server.py"]
+CMD ["python3", "/src/server.py"]

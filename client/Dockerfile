@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:3.22.2
 
 # Update
 RUN apk add --update python3
